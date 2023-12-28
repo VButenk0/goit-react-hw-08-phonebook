@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { StyledForm, StyledInput, StyledButton } from './Form.styled';
 import { useState } from 'react';
-import { addContactThunk } from '../../redux/operations';
+import { addContactThunk } from '../../redux/contacts/operations';
 
 export const Form = () => {
   const dispatch = useDispatch();
