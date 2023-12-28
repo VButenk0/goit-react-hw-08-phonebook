@@ -9,7 +9,7 @@ export const StyledUserContainer = styled.div`
   button {
     height: 30px;
     background-color: transparent;
-    border: 1px solid #533566;
+    border: 1px solid #9c27b0;
     border-radius: 10px;
     &:hover {
       color: white;

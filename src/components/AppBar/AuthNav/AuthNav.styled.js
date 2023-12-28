@@ -13,7 +13,7 @@ export const StyledNavLink = styled(NavLink)`
 
   &.active {
     color: white;
-    background-color: #533566;
+    background-color: #9c27b0;
     border-radius: 10px;
   }
 `;

@@ -24,7 +24,7 @@ const StyledAppBar = styled.div`
 
   padding: 10px 20px;
 
-  border-bottom: 2px solid #533566;
+  border-bottom: 2px solid #9c27b0;
 
   &:not(:first-child) {
     display: flex;

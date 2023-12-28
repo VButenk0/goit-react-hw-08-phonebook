@@ -8,10 +8,4 @@ export const StyledForm = styled.form`
   gap: 20px;
 
   padding: 20px 10px;
-
-  label {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
 `;

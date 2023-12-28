@@ -4,6 +4,7 @@ import { loginThunk } from '../../redux/auth/authOperations';
 import { StyledForm } from 'pages/Register/Register.styled';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
+import { Button, TextField } from '@mui/material';
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
@@ -23,15 +24,22 @@ const Login = () => {
   return (
     <>
       <StyledForm onSubmit={handleSubmit(submit)}>
-        <label htmlFor="email">
-          Email
-          <input {...register('email')} name="email" type="email" />
-        </label>
-        <label htmlFor="password">
-          Password
-          <input {...register('password')} name="password" type="password" />
-        </label>
-        <button>Log In</button>
+        <TextField
+          {...register('email')}
+          label="Email"
+          variant="outlined"
+          color="secondary"
+        />
+        <TextField
+          {...register('password')}
+          label="Password"
+          variant="outlined"
+          type="password"
+          color="secondary"
+        />
+        <Button type="submit" variant="contained" color="secondary">
+          Login
+        </Button>
       </StyledForm>
     </>
   );

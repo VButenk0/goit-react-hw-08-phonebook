@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { StyledForm, StyledInput, StyledButton } from './Form.styled';
+import { StyledForm } from './Form.styled';
 import { useState } from 'react';
 import { addContactThunk } from '../../redux/contacts/operations';
+import { Button, TextField } from '@mui/material';
 
 export const Form = () => {
   const dispatch = useDispatch();
@@ -42,33 +43,26 @@ export const Form = () => {
 
   return (
     <StyledForm onSubmit={handleSubmit}>
-      <label htmlFor="name">Name</label>
-      <br />
-      <StyledInput
+      <TextField
         onChange={handleChangeName}
-        id="name"
-        type="text"
-        name="name"
+        label="Fullname"
+        helperText="Type new contact full name (Name Surname)"
+        variant="outlined"
         value={name}
-        placeholder="Type new contact full name (Name Surname)"
-        pattern="^(\w\w+)\s(\w+)$"
-        required
+        color="secondary"
       />
-      <br />
-      <label htmlFor="number">Number</label>
-      <br />
-      <StyledInput
+      <TextField
         onChange={handleChangeNumber}
-        id="number"
+        label="Number"
+        helperText="Type new contact number (111-111-1111)"
+        variant="outlined"
         type="tel"
-        name="number"
         value={number}
-        placeholder="Type new contact number (111-111-1111)"
-        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-        required
+        color="secondary"
       />
-      <br />
-      <StyledButton type="submit">Add contact</StyledButton>
+      <Button type="submit" variant="outlined" color="secondary">
+        Add contact
+      </Button>
     </StyledForm>
   );
 };
