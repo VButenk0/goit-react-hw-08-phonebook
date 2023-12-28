@@ -10,6 +10,7 @@ import { currentUserThunk } from './redux/auth/authOperations';
 import PrivateRoute from './routes/PrivateRoute';
 import PublicRoute from './routes/PublicRoute';
 import { selectIsRefresh } from './redux/auth/authSelectors';
+import Loader from 'components/Loader/Loader';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -21,7 +22,7 @@ export const App = () => {
   const isRefresh = useSelector(selectIsRefresh);
 
   return isRefresh ? (
-    <p>Loading...</p>
+    <Loader />
   ) : (
     <>
       <AppBar />

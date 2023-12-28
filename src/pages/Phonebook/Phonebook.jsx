@@ -5,6 +5,8 @@ import { Filter } from 'components/Filter/Filter';
 import { Form } from 'components/Form/Form';
 import { useSelector } from 'react-redux';
 import { selectIsLoggedIn } from '../../redux/auth/authSelectors';
+import Loader from 'components/Loader/Loader';
+import { toast } from 'react-toastify';
 
 const Phonebook = () => {
   const loading = useSelector(state => state.contacts.loading);
@@ -19,10 +21,13 @@ const Phonebook = () => {
       <h2>Contacts</h2>
       <Filter />
       <ContactsList />
-      {loading && <h2>Loading...</h2>}
+      {loading && <Loader />}
       {error && (
         <h3>
-          {error && 'Something went wrong. Please check your authorization.'}
+          {error &&
+            toast.error(
+              'Something went wrong. Please check your authorization.'
+            )}
         </h3>
       )}
     </StyledContainer>

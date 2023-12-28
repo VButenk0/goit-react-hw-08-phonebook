@@ -7,6 +7,10 @@ const PublicRoute = ({ children }) => {
 
   const location = useLocation();
 
-  return !isLoggedIn ? children : <Navigate to={'/login'} state={location} />;
+  return !isLoggedIn ? (
+    children
+  ) : (
+    <Navigate to={'/contacts'} state={location} />
+  );
 };
 export default PublicRoute;

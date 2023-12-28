@@ -2,22 +2,14 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { signupThunk } from '../../redux/auth/authOperations';
 import { StyledForm } from './Register.styled';
-import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
 const Register = () => {
   const { register, handleSubmit } = useForm();
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const submit = data => {
-    dispatch(signupThunk(data))
-      .unwrap()
-      .then(() => {
-        navigate('/contacts');
-      })
-      .catch(err => toast.error(err));
+    dispatch(signupThunk(data));
   };
 
   return (
