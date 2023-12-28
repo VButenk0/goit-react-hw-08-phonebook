@@ -7,10 +7,14 @@ import {
 } from '../../redux/contacts/operations';
 import { IconButton, List, ListItem, ListItemText } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
+import {
+  selectContacts,
+  selectFilter,
+} from '../../redux/contacts/contactSelector';
 
 export const ContactsList = () => {
-  const contacts = useSelector(state => state.contacts.contacts);
-  const filter = useSelector(state => state.contacts.filter);
+  const contacts = useSelector(selectContacts);
+  const filter = useSelector(selectFilter);
 
   const dispatch = useDispatch();
 

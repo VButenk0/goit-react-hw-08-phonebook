@@ -3,11 +3,12 @@ import { StyledForm } from './Form.styled';
 import { useState } from 'react';
 import { addContactThunk } from '../../redux/contacts/operations';
 import { Button, TextField } from '@mui/material';
+import { selectContacts } from '../../redux/contacts/contactSelector';
 
 export const Form = () => {
   const dispatch = useDispatch();
 
-  const contacts = useSelector(state => state.contacts.contacts);
+  const contacts = useSelector(selectContacts);
 
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
