@@ -27,8 +27,7 @@ const slice = createSlice({
         state.token = '';
       })
       .addCase(currentUserThunk.fulfilled, (state, { payload }) => {
-        state.user.name = payload.name;
-        state.user.email = payload.email;
+        state.user = payload;
         state.isLoggedIn = true;
         state.isRefresh = false;
       })
@@ -41,7 +40,7 @@ const slice = createSlice({
       .addMatcher(
         isAnyOf(signupThunk.fulfilled, loginThunk.fulfilled),
         (state, { payload }) => {
-          state.user = payload.user;
+          state.user = payload;
           state.token = payload.token;
           state.isLoggedIn = true;
         }
